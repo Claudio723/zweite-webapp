@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #F8F5F0;
+  --warm: #C9A87C;
+  --deep: #2C3E2D;
+}
+
+body {
+  font-family: var(--font-instrument);
+}
+
+.heading-font {
+  font-family: var(--font-playfair);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.service-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+}
+
+.warm-gradient {
+  background: linear-gradient(135deg, #F8F5F0 0%, #F0EBE3 100%);
+}
+
+.subtle-grain {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(44, 62, 45, 0.04) 1px, transparent 0);
+  background-size: 4px 4px;
+}
+
+.friendly-hover {
+  transition: all 0.3s ease;
+}
+
+.friendly-hover:hover {
+  color: #C9A87C;
+}
+
+.soft-shadow {
+  box-shadow: 0 10px 15px -3px rgb(44 62 45 / 0.08), 
+             0 4px 6px -4px rgb(44 62 45 / 0.08);
+}
