@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Büroassist • Sympathische Bürohilfe für kleine Firmen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --cream: #F8F5F0;
+            --sage: #5C6B5E;
+            --warm: #C9A87C;
+            --deep: #2C3E2D;
+        }
+        
+        body {
+            font-family: 'Instrument Sans', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .section-padding {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .nav-scrolled {
+            background: rgba(248, 245, 240, 0.95);
+            backdrop-filter: blur(12px);
+        }
+
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+        }
+
+        .warm-gradient {
+            background: linear-gradient(135deg, #F8F5F0 0%, #F0EBE3 100%);
+        }
+
+        .subtle-grain {
+            background-image: 
+                radial-gradient(circle at 1px 1px, rgba(44, 62, 45, 0.04) 1px, transparent 0);
+            background-size: 4px 4px;
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .friendly-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .friendly-hover:hover {
+            color: #C9A87C;
+        }
+
+        .soft-shadow {
+            box-shadow: 0 10px 15px -3px rgb(44 62 45 / 0.08), 
+                       0 4px 6px -4px rgb(44 62 45 / 0.08);
+        }
+    </style>
+</head>
+<body class="bg-[#F8F5F0] text-[#2C3E2D] overflow-x-hidden">
+    <!-- Navigation -->
+    <nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-10 h-10 bg-[#2C3E2D] rounded-2xl flex items-center justify-center">
+                        <span class="text-[#F8F5F0] text-2xl font-bold">B</span>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-2xl tracking-tight">Büroassist</div>
+                        <div class="text-[10px] text-[#5C6B5E] -mt-1">Seit 2018</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-x-10 text-sm">
+                    <a href="#leistungen" class="friendly-hover font-medium">Leistungen</a>
+                    <a href="#warum" class="friendly-hover font-medium">Warum wir</a>
+                    <a href="#referenzen" class="friendly-hover font-medium">Referenzen</a>
+                </div>
+
+                <div class="flex items-center gap-x-4">
+                    <a href="#kontakt" 
+                       class="px-6 py-2.5 bg-[#2C3E2D] hover:bg-[#1f2b20] text-[#F8F5F0] text-sm font-semibold rounded-3xl transition-colors flex items-center gap-x-2">
+                        <span>Kontakt aufnehmen</span>
+                    </a>
+                    
+                    <!-- Mobile menu button -->
+                    <button class="md:hidden w-10 h-10 flex items-center justify-center text-[#2C3E2D]">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-20 min-h-[100dvh] flex items-center warm-gradient subtle-grain">
+        <div class="max-w-6xl mx-auto px-6 pt-12 pb-20">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-x-2 px-4 py-1.5 bg-white/70 backdrop-blur rounded-3xl mb-6 border border-[#E8E2D9]">
+                    <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                    <span class="text-sm font-medium text-[#5C6B5E]">Vertraut von 180+ kleinen Unternehmen</span>
+                </div>
+                
+                <h1 class="heading-font text-7xl md:text-8xl leading-[0.95] tracking-tighter mb-8">
+                    Büroarbeit,<br>
+                    die sich<br>
+                    <span class="text-[#C9A87C]">wie Zuhause</span><br>
+                    anfühlt.
+                </h1>
+                
+                <p class="max-w-md text-xl text-[#5C6B5E] mb-10 leading-relaxed">
+                    Sympathische, zuverlässige Unterstützung für alle Büroaufgaben – 
+                    damit Sie sich auf das Wesentliche konzentrieren können.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#kontakt" 
+                       class="group inline-flex items-center justify-center gap-x-3 px-9 py-4 bg-[#2C3E2D] hover:bg-[#1f2b20] text-[#F8F5F0] font-semibold rounded-3xl transition-all active:scale-[0.985]">
+                        <span>Jetzt unverbindlich anfragen</span>
+                        <i class="fa-solid fa-arrow-right group-active:translate-x-1 transition"></i>
+                    </a>
+                    
+                    <a href="#leistungen" 
+                       class="inline-flex items-center justify-center gap-x-3 px-8 py-4 border border-[#D4C9B8] hover:bg-white/50 font-medium rounded-3xl transition-colors">
+                        Leistungen ansehen
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-x-8 mt-14">
+                    <div class="flex -space-x-3">
+                        <div class="w-9 h-9 rounded-full border-2 border-[#F8F5F0] overflow-hidden"><img src="https://i.pravatar.cc/36?img=28" alt=""></div>
+                        <div class="w-9 h-9 rounded-full border-2 border-[#F8F5F0] overflow-hidden"><img src="https://i.pravatar.cc/36?img=47" alt=""></div>
+                        <div class="w-9 h-9 rounded-full border-2 border-[#F8F5F0] overflow-hidden"><img src="https://i.pravatar.cc/36?img=32" alt=""></div>
+                    </div>
+                    <div class="text-sm">
+                        <div class="font-semibold">„Endlich jemand, der versteht, wie wir arbeiten.“</div>
+                        <div class="text-[#5C6B5E]">— Familie Müller, Bäckerei</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leistungen -->
+    <section id="leistungen" class="section-padding max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row gap-y-8 md:items-end md:justify-between mb-12">
+            <div>
+                <div class="uppercase tracking-[3px] text-xs font-semibold text-[#C9A87C] mb-3">WAS WIR MACHEN</div>
+                <h2 class="heading-font text-5xl tracking-tight">Alles, was Ihr Büro braucht.</h2>
+            </div>
+            <p class="max-w-sm text-[#5C6B5E]">Von der täglichen Korrespondenz bis zur kompletten Buchhaltung – wir übernehmen die Aufgaben, die Zeit kosten.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Service 1 -->
+            <div class="service-card bg-white p-9 rounded-3xl soft-shadow border border-[#E8E2D9]">
+                <div class="w-14 h-14 bg-[#F0EBE3] rounded-2xl flex items-center justify-center mb-8">
+                    <i class="fa-solid fa-envelope text-3xl text-[#C9A87C]"></i>
+                </div>
+                <h3 class="text-3xl font-semibold tracking-tight mb-4">Korrespondenz &amp; E-Mails</h3>
+                <p class="text-[#5C6B5E] leading-relaxed mb-6">Professionelle Beantwortung von Kundenanfragen, Terminvereinbarungen und allgemeiner Schriftverkehr – freundlich und zuverlässig.</p>
+                <div class="text-sm font-medium text-[#C9A87C]">Ab 18 € / Stunde</div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card bg-white p-9 rounded-3xl soft-shadow border border-[#E8E2D9]">
+                <div class="w-14 h-14 bg-[#F0EBE3] rounded-2xl flex items-center justify-center mb-8">
+                    <i class="fa-solid fa-calculator text-3xl text-[#C9A87C]"></i>
+                </div>
+                <h3 class="text-3xl font-semibold tracking-tight mb-4">Buchhaltung &amp; Rechnungen</h3>
+                <p class="text-[#5C6B5E] leading-relaxed mb-6">Erstellung von Rechnungen, Mahnungen, einfache Buchhaltung und Vorbereitung für den Steuerberater – übersichtlich und pünktlich.</p>
+                <div class="text-sm font-medium text-[#C9A87C]">Ab 22 € / Stunde</div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card bg-white p-9 rounded-3xl soft-shadow border border-[#E8E2D9]">
+                <div class="w-14 h-14 bg-[#F0EBE3] rounded-2xl flex items-center justify-center mb-8">
+                    <i class="fa-solid fa-calendar-check text-3xl text-[#C9A87C]"></i>
+                </div>
+                <h3 class="text-3xl font-semibold tracking-tight mb-4">Terminplanung &amp; Organisation</h3>
+                <p class="text-[#5C6B5E] leading-relaxed mb-6">Terminkoordination, Kalenderpflege, Erinnerungen und Vorbereitung von Meetings – damit nichts mehr untergeht.</p>
+                <div class="text-sm font-medium text-[#C9A87C]">Ab 16 € / Stunde</div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-card bg-white p-9 rounded-3xl soft-shadow border border-[#E8E2D9]">
+                <div class="w-14 h-14 bg-[#F0EBE3] rounded-2xl flex items-center justify-center mb-8">
+                    <i class="fa-solid fa-file-lines text-3xl text-[#C9A87C]"></i>
+                </div>
+                <h3 class="text-3xl font-semibold tracking-tight mb-4">Dokumentenmanagement</h3>
+                <p class="text-[#5C6B5E] leading-relaxed mb-6">Ablage, Digitalisierung, Erstellung von Verträgen und Formularen – alles ordentlich und schnell auffindbar.</p>
+                <div class="text-sm font-medium text-[#C9A87C]">Ab 19 € / Stunde</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warum wir -->
+    <section id="warum" class="section-padding bg-[#2C3E2D] text-[#F8F5F0]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-2xl mb-16">
+                <div class="uppercase tracking-[3px] text-xs font-semibold text-[#C9A87C] mb-4">WARUM BÜROASSIST?</div>
+                <h2 class="heading-font text-6xl tracking-tight leading-none">Weil gute Büroarbeit<br>mehr ist als nur Erledigen.</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/5 backdrop-blur p-8 rounded-3xl border border-white/10">
+                    <div class="text-[#C9A87C] text-5xl mb-6">01</div>
+                    <h4 class="font-semibold text-2xl mb-4">Sympathisch &amp; menschlich</h4>
+                    <p class="text-[#D4D0C8]">Wir sind keine anonyme Agentur. Sie sprechen immer mit derselben Person, die Ihre Firma wirklich kennt.</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur p-8 rounded-3xl border border-white/10">
+                    <div class="text-[#C9A87C] text-5xl mb-6">02</div>
+                    <h4 class="font-semibold text-2xl mb-4">Modern &amp; digital</h4>
+                    <p class="text-[#D4D0C8]">Arbeiten mit den Tools, die Sie nutzen – von Google Workspace über DATEV bis hin zu individuellen Systemen.</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur p-8 rounded-3xl border border-white/10">
+                    <div class="text-[#C9A87C] text-5xl mb-6">03</div>
+                    <h4 class="font-semibold text-2xl mb-4">Einfach &amp; transparent</h4>
+                    <p class="text-[#D4D0C8]">Keine versteckten Kosten. Monatliche Abrechnung, flexible Stundenmodelle und monatliche Reports.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Für wen -->
+    <section class="section-padding max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-12 gap-y-12 items-center">
+            <div class="md:col-span-7">
+                <div class="uppercase tracking-[3px] text-xs font-semibold text-[#C9A87C] mb-4">FÜR WEN WIR ARBEITEN</div>
+                <h2 class="heading-font text-6xl tracking-tight leading-none mb-8">Kleine Firmen, die groß denken.</h2>
+                
+                <div class="space-y-6 text-lg text-[#5C6B5E]">
+                    <div class="flex gap-4">
+                        <i class="fa-solid fa-check text-[#C9A87C] mt-1.5"></i>
+                        <div>Handwerksbetriebe &amp; Dienstleister</div>
+                    </div>
+                    <div class="flex gap-4">
+                        <i class="fa-solid fa-check text-[#C9A87C] mt-1.5"></i>
+                        <div>Einzelunternehmer &amp; Freiberufler</div>
+                    </div>
+                    <div class="flex gap-4">
+                        <i class="fa-solid fa-check text-[#C9A87C] mt-1.5"></i>
+                        <div>Kleine Agenturen &amp; Beratungen</div>
+                    </div>
+                    <div class="flex gap-4">
+                        <i class="fa-solid fa-check text-[#C9A87C] mt-1.5"></i>
+                        <div>Familienunternehmen mit 3–25 Mitarbeitern</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:col-span-5 bg-white p-10 rounded-3xl soft-shadow border border-[#E8E2D9]">
+                <div class="text-center">
+                    <div class="text-6xl font-semibold tabular-nums mb-1">98</div>
+                    <div class="text-[#5C6B5E]">Kundenzufriedenheit</div>
+                    <div class="h-px bg-[#E8E2D9] my-8"></div>
+                    
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div>
+                            <div class="text-3xl font-semibold">180+</div>
+                            <div class="text-xs text-[#5C6B5E]">Kunden</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-semibold">12k</div>
+                            <div class="text-xs text-[#5C6B5E]">Stunden/Jahr</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-semibold">6</div>
+                            <div class="text-xs text-[#5C6B5E]">Jahre</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referenzen -->
+    <section id="referenzen" class="section-padding bg-[#F0EBE3]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <div class="uppercase tracking-[3px] text-xs font-semibold text-[#C9A87C]">WAS UNSERE KUNDEN SAGEN</div>
+                <h2 class="heading-font text-5xl tracking-tight mt-3">Echte Stimmen aus dem Alltag.</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-9 rounded-3xl soft-shadow">
+                    <div class="flex gap-1 text-[#C9A87C] mb-6">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <blockquote class="text-xl leading-tight mb-8">„Büroassist hat uns das Leben gerettet. Endlich hat jemand die lästigen Admin-Aufgaben im Griff – und das mit so viel Herz und Verständnis.“</blockquote>
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/48?img=40" class="w-12 h-12 rounded-2xl" alt="">
+                        <div>
+                            <div class="font-semibold">Sabine K.</div>
+                            <div class="text-sm text-[#5C6B5E]">Inhaberin, Blumenhaus am See</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-9 rounded-3xl soft-shadow">
+                    <div class="flex gap-1 text-[#C9A87C] mb-6">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote class="text-xl leading-tight mb-8">„Seit wir Büroassist haben, sind unsere Rechnungen pünktlich draußen und die Buchhaltung ist immer auf dem neuesten Stand. Einfach perfekt.“</blockquote>
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/48?img=60" class="w-12 h-12 rounded-2xl" alt="">
+                        <div>
+                            <div class="font-semibold">Thomas &amp; Lena Weber</div>
+                            <div class="text-sm text-[#5C6B5E]">Geschäftsführer, Weber Elektro</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Kontakt -->
+    <section id="kontakt" class="section-padding max-w-3xl mx-auto px-6 text-center">
+        <div class="max-w-md mx-auto">
+            <div class="uppercase tracking-[3px] text-xs font-semibold text-[#C9A87C] mb-4">BEREIT?</div>
+            <h2 class="heading-font text-6xl tracking-tight mb-6">Lassen Sie uns reden.</h2>
+            <p class="text-[#5C6B5E] mb-10">Erzählen Sie uns von Ihrem Büro-Alltag. Wir finden gemeinsam die beste Lösung – unverbindlich und kostenlos.</p>
+            
+            <form class="space-y-4 text-left" onsubmit="handleSubmit(event)">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1.5">Vorname</label>
+                        <input type="text" class="w-full px-5 py-3.5 bg-white border border-[#D4C9B8] rounded-2xl focus:outline-none focus:border-[#C9A87C]" placeholder="Anna" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1.5">Nachname</label>
+                        <input type="text" class="w-full px-5 py-3.5 bg-white border border-[#D4C9B8] rounded-2xl focus:outline-none focus:border-[#C9A87C]" placeholder="Müller" required>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium mb-1.5">E-Mail-Adresse</label>
+                    <input type="email" class="w-full px-5 py-3.5 bg-white border border-[#D4C9B8] rounded-2xl focus:outline-none focus:border-[#C9A87C]" placeholder="anna@mueller-bau.ch" required>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium mb-1.5">Was brauchen Sie Unterstützung bei?</label>
+                    <select class="w-full px-5 py-3.5 bg-white border border-[#D4C9B8] rounded-2xl focus:outline-none focus:border-[#C9A87C]" text-[#5C6B5E]">
+                        <option>Buchhaltung &amp; Rechnungen</option>
+                        <option>Korrespondenz &amp; E-Mails</option>
+                        <option>Terminplanung</option>
+                        <option>Komplettpaket (mehrmals pro Woche)</option>
+                        <option>Sonstiges – bitte beschreiben</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium mb-1.5">Nachricht (optional)</label>
+                    <textarea rows="4" class="w-full px-5 py-3.5 bg-white border border-[#D4C9B8] rounded-3xl focus:outline-none focus:border-[#C9A87C]" resize-y" placeholder="Wir haben ca. 8–10 Stunden pro Woche..."></textarea>
+                </div>
+                
+                <button type="submit" 
+                        class="mt-4 w-full py-4 bg-[#2C3E2D] hover:bg-[#1f2b20] text-[#F8F5F0] font-semibold rounded-3xl transition-all flex items-center justify-center gap-x-3">
+                    <span>Anfrage abschicken</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+                
+                <p class="text-xs text-center text-[#8A8579]">Wir melden uns innerhalb von 24 Stunden.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#2C3E2D] text-[#D4D0C8] py-16">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-y-12">
+            <div class="md:col-span-5">
+                <div class="flex items-center gap-x-3 mb-6">
+                    <div class="w-9 h-9 bg-[#C9A87C] rounded-2xl flex items-center justify-center">
+                        <span class="text-[#2C3E2D] text-xl font-bold">B</span>
+                    </div>
+                    <span class="font-semibold text-2xl text-white">Büroassist</span>
+                </div>
+                <div class="max-w-xs text-sm">Sympathische Bürohilfe für kleine Unternehmen in der Region Zürich und Umgebung.</div>
+            </div>
+            
+            <div class="md:col-span-3 text-sm">
+                <div class="font-semibold text-white mb-4">Kontakt</div>
+                <div class="space-y-1.5">
+                    <div>hello@bueroassist.ch</div>
+                    <div>+41 44 555 12 34</div>
+                    <div class="pt-2">Seestrasse 42<br>8800 Thalwil</div>
+                </div>
+            </div>
+            
+            <div class="md:col-span-4 text-sm">
+                <div class="font-semibold text-white mb-4">Rechtliches</div>
+                <div class="space-y-2">
+                    <div>Datenschutz</div>
+                    <div>AGB</div>
+                    <div>Impressum</div>
+                </div>
+                <div class="mt-8 text-xs opacity-60">© 2026 Büroassist. Mit ❤️ gemacht für kleine Firmen.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#C9A87C');
+        }
+        
+        // Navbar scroll effect
+        function initNavbar() {
+            const nav = document.getElementById('nav');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('nav-scrolled', 'shadow-sm');
+                } else {
+                    nav.classList.remove('nav-scrolled', 'shadow-sm');
+                }
+            });
+        }
+        
+        // Form handler
+        function handleSubmit(e) {
+            e.preventDefault();
+            
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<span>Verschickt – Danke!</span>';
+            btn.disabled = true;
+            btn.classList.add('!bg-emerald-600');
+            
+            setTimeout(() => {
+                alert('Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.');
+                e.target.reset();
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                btn.classList.remove('!bg-emerald-600');
+            }, 1800);
+        }
+        
+        // Smooth scroll for anchor links
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        const offset = 80;
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition - bodyRect - offset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Initialize everything
+        function init() {
+            initializeTailwind();
+            initNavbar();
+            initSmoothScroll();
+            
+            // Easter egg: logo click
+            const logo = document.querySelector('.fa-solid.fa-bars');
+            if (logo) {
+                logo.parentElement.addEventListener('click', () => {
+                    document.documentElement.style.transition = 'filter 0.4s';
+                    document.documentElement.style.filter = 'hue-rotate(25deg)';
+                    setTimeout(() => {
+                        document.documentElement.style.filter = '';
+                    }, 800);
+                });
+            }
+            
+            console.log('%c[Büroassist] Landingpage ready – modern & sympathisch', 'color:#C9A87C');
+        }
+        
+        window.onload = init;
+    </script>
+</body>
+</html>
